@@ -29,7 +29,7 @@ namespace ShoppingBasket.Tests
             IProduct hat = new Product("hat", new decimal(10.50));
             IProduct jumper = new Product("jumper", new decimal(54.65));
 
-            IDiscount giftCard = new GiftCard("XXX-XXX", new decimal(5.00));
+            IDiscount giftCard = new GiftVoucher("XXX-XXX", new decimal(5.00));
 
             IBasket basket = new Basket();
             basket.AddProduct(hat, 1);
@@ -127,7 +127,7 @@ namespace ShoppingBasket.Tests
             IProduct hat = new Product("hat", new decimal(25.00));
             IProduct jumper = new Product("jumper", new decimal(26.00));
 
-            IDiscount giftCard = new GiftCard("XXX-XXX", new decimal(5.00));
+            IDiscount giftCard = new GiftVoucher("XXX-XXX", new decimal(5.00));
             IDiscount offerVoucher = new OfferVoucher("YYY-YYY", new decimal(5.00), new decimal(50.00));
 
             IBasket basket = new Basket();

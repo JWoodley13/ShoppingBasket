@@ -95,7 +95,7 @@ namespace ShoppingBasket.Checkout
         private void CalculateDiscount()
         {
             //total discount from giftcards
-            decimal giftCardDiscount = Discounts.Where(x => x.GetType() == typeof(GiftCard)).Sum(x => x.Amount);
+            decimal giftCardDiscount = Discounts.Where(x => x.GetType() == typeof(GiftVoucher)).Sum(x => x.Amount);
 
             //we know we can only have one offer voucher, so SingleOrDefault will either return the voucher, or null
             OfferVoucher voucher = (OfferVoucher)Discounts.SingleOrDefault(x => x.GetType() == typeof(OfferVoucher));

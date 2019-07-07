@@ -8,26 +8,17 @@ using System.Threading.Tasks;
 
 namespace ShoppingBasket.Catalog
 {
-    public class GiftCard : IProduct, IDiscount
+    public class GiftCard : IProduct
     {
-        public GiftCard(string code, decimal amount)
+        public GiftCard(string name, decimal price)
         {
-            Code = code;
-            Amount = amount;
+            Name = name;
+            Price = price;
         }
 
         public string Name { get; set; }
         public decimal Price { get; set; }
         public ICategory Category { get; set; }
 
-        public string Code { get; }
-        public decimal Amount { get; }
-        public decimal MinimumSpend => 0;
-
-        public bool DiscountIsValidForBasket(IBasket basket, out string errorMessage)
-        {
-            errorMessage = string.Empty;
-            return true;
-        }
     }
 }
