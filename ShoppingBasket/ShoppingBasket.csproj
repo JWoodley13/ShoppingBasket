@@ -45,6 +45,7 @@
     <Compile Include="Checkout\BasketItem.cs" />
     <Compile Include="Checkout\IBasket.cs" />
     <Compile Include="Checkout\IBasketItem.cs" />
+    <Compile Include="Discounts\Discount.cs" />
     <Compile Include="Discounts\GiftVoucher.cs" />
     <Compile Include="Discounts\IDiscount.cs" />
     <Compile Include="Discounts\OfferVoucher.cs" />

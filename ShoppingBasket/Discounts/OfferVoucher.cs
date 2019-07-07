@@ -8,13 +8,10 @@ using ShoppingBasket.Catalog;
 
 namespace ShoppingBasket.Discounts
 {
-    public class OfferVoucher : IDiscount
+    public class OfferVoucher : Discount
     {
-        public OfferVoucher(string code, decimal amount, decimal minimumSpend)
+        public OfferVoucher(string code, decimal amount, decimal minimumSpend) : base(code, amount, minimumSpend)
         {
-            Code = code;
-            Amount = amount;
-            MinimumSpend = minimumSpend;
         }
 
         public OfferVoucher(string code, decimal amount, decimal minimumSpend, ICategory category) : this(code, amount, minimumSpend)
@@ -22,12 +19,7 @@ namespace ShoppingBasket.Discounts
             Category = category;
         }
 
-        public string Code { get; set; }
-        public decimal Amount { get; set; }
-        public ICategory Category { get; set; }
-        public decimal MinimumSpend { get; set; }
-
-        public bool DiscountIsValidForBasket(IBasket basket, out string errorMessage)
+        public override bool DiscountIsValidForBasket(IBasket basket, out string errorMessage)
         {
             errorMessage = string.Empty;
 
